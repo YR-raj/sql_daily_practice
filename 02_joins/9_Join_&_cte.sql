@@ -8,7 +8,6 @@
 -- 3.
 
 -- Unoptimized SQL Query:
-# Write your MySQL query statement below
 WITH main_cte As(
     SELECT 
         user_id,
