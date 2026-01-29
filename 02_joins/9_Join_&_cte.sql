@@ -1,11 +1,18 @@
--- Problem:
+-- Problem: Find the confirmation rate for each user_id who tried to sign up. There are those users too who were not able to sign up.
 
--- Dataset:
+-- Dataset: Signups table with columns: user_id, time_stamp
+--          Confirmations table with columns: user_id, time_stamp, action
 
 -- Approach:
--- 1.
--- 2.
--- 3.
+-- 1. Since we want to find out about confirmation_rate about EACH user_id, we will LEFT JOIN ON user_id.
+-- 2. But before that, we have to count the confirmed actions of each user_id to calculate the confirmation rate.
+-- 3. For this, we will use CASE statement to create a new column act_cnt in confirmations table which will have 1 if action is 'confirmed' else 0.
+-- 4. Then, we will wrap it up in a CTE called main_cte.
+-- 5. Now, we will LEFT JOIN Signups table with main_cte on user_id.
+-- 6. Finally, we will GROUP BY user_id and calculate confirmation_rate.
+-- 7. For the confirmation rate, we will use SUM(act_cnt)/COUNT(user_id) and ROUND it to 2 decimal places as required.
+
+
 
 -- Unoptimized SQL Query:
 WITH main_cte As(
