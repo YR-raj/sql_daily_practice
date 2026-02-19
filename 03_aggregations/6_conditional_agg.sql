@@ -1,4 +1,4 @@
--- Problem: Write a query to calculate 
+-- Problem: 
 
 -- Dataset:
 
